@@ -1,6 +1,6 @@
 {
   "name": "mimosa-ejs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/dbashford/mimosa-ejs",
   "author": "David Bashford",
   "description": "An EJS compiler for Mimosa 2.0+",
@@ -21,7 +21,6 @@
     "ejs"
   ],
   "dependencies": {
-    "logmimosa": "0.6.0",
     "ejs": "0.8.5"
   },
   "license": "MIT",
