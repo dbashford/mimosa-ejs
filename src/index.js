@@ -1,12 +1,12 @@
 "use strict";
 
-var path = require( 'path' )
-  , config = require( './config' )
+var path = require( "path" )
+  , config = require( "./config" )
   , getExtensions = function ( mimosaConfig ) {
     return mimosaConfig.ejs.extensions;
   }
   , _transform = function (output) {
-    return output.replace(/\nescape[\s\S]*?};/, 'escape = escape || globalEscape; filters = filters || globalFilters;');
+    return output.replace(/\nescape[\s\S]*?};/, "escape = escape || globalEscape; filters = filters || globalFilters;");
   }
   , boilerplate = "var templates = {};\n" +
     "var globalEscape = function(html){\n" +
@@ -17,7 +17,7 @@ var path = require( 'path' )
     "    .replace(/\"/g, '&quot;')};\n";
 
 var prefix =  function ( config, libraryPath ) {
-  if ( config.template.wrapType === 'amd' ) {
+  if ( config.template.wrapType === "amd" ) {
     return "define(['" + libraryPath + "'], function (globalFilters){\n"  + boilerplate;
   } else {
     if ( config.template.wrapType === "common" ) {
@@ -28,7 +28,7 @@ var prefix =  function ( config, libraryPath ) {
 };
 
 var suffix = function ( config ) {
-  if ( config.template.wrapType === 'amd' ) {
+  if ( config.template.wrapType === "amd" ) {
     return "return templates; });";
   } else {
     if ( config.template.wrapType === "common" ) {

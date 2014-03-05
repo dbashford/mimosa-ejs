@@ -3,16 +3,16 @@
 exports.defaults = function() {
   return {
     ejs: {
-      extensions: [ "ejs" ],
+      extensions: [ "ejs" ]
     }
   };
 };
 
 exports.placeholder = function() {
-  return "\t\n\n"+
-         "  # ejs:                   # config settings for the EJS compiler module\n" +
-         "    # lib: undefined       # use this property to provide a specific version of EJS\n" +
-         "    # extensions: [\"ejs\"]  # default extensions for EJS files\n";
+  return "\t\n\n" +
+         "  ejs:                   # config settings for the EJS compiler module\n" +
+         "    lib: undefined       # use this property to provide a specific version of EJS\n" +
+         "    extensions: [\"ejs\"]  # default extensions for EJS files\n";
 };
 
 exports.validate = function( config, validators ) {
@@ -21,7 +21,7 @@ exports.validate = function( config, validators ) {
   if ( validators.ifExistsIsObject( errors, "ejs config", config.ejs ) ) {
 
     if ( !config.ejs.lib ) {
-      config.ejs.lib = require( 'ejs' );
+      config.ejs.lib = require( "ejs" );
     }
 
     if ( validators.isArrayOfStringsMustExist( errors, "ejs.extensions", config.ejs.extensions ) ) {
@@ -33,6 +33,3 @@ exports.validate = function( config, validators ) {
 
   return errors;
 };
-
-
-

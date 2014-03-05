@@ -1,6 +1,6 @@
 {
   "name": "mimosa-ejs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/dbashford/mimosa-ejs",
   "author": "David Bashford",
   "description": "An EJS compiler for Mimosa 2.0+",
